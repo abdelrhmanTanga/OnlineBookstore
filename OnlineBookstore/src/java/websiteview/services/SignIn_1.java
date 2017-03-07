@@ -28,7 +28,7 @@ import javax.sql.DataSource;
  *
  * @author abdelrhman galal
  */
-public class SignIn extends HttpServlet {
+public class SignIn_1 {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,14 +41,13 @@ public class SignIn extends HttpServlet {
      */
     Session session;
     DataSource datasource;
-    SignIn_1 signin;
-    @Override
-    public void init(ServletConfig config)
+
+    
+    public SignIn_1()
             throws ServletException {
         try {
-            super.init(config); //To change body of generated methods, choose Tools | Templates.
+            
             session = new Session();
-            signin = new SignIn_1();
             Context envCtx = (Context) new InitialContext().lookup("java:comp/env");
             datasource = (DataSource) envCtx.lookup("jdbc/TestDB");
         } catch (NamingException ex) {
@@ -61,9 +60,7 @@ public class SignIn extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        signin.processRequest(request, response);
-        
-        /*response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         Connection connection = null;
         try {
@@ -73,6 +70,8 @@ public class SignIn extends HttpServlet {
             rs.next();
             out.println("in query exec");
             out.println(rs.getString(2));
+            pst.close();
+            rs.close();
             connection.close();
 
         } catch (SQLException sqlException) {
@@ -92,43 +91,6 @@ public class SignIn extends HttpServlet {
         }*/
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    
 
 }

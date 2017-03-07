@@ -3,22 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Facade;
-
-import websitemodel.databaseDTO.Client;
+package websitemodel.databaseDAO;
 
 /**
  *
  * @author abdelrhman galal
  */
-public class Session {
-    Client clientsDAO;
-    public Session() {
-        clientsDAO = new Client();
-    }
-
-    public boolean check() {
-        return true;
-    }
-
+public class OrderHistoryDAO {
+    
+    
 }
