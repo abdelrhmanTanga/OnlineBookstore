@@ -41,14 +41,12 @@ public class SignIn extends HttpServlet {
      */
     Session session;
     DataSource datasource;
-    SignIn_1 signin;
     @Override
     public void init(ServletConfig config)
             throws ServletException {
         try {
             super.init(config); //To change body of generated methods, choose Tools | Templates.
             session = new Session();
-            signin = new SignIn_1();
             Context envCtx = (Context) new InitialContext().lookup("java:comp/env");
             datasource = (DataSource) envCtx.lookup("jdbc/TestDB");
         } catch (NamingException ex) {
@@ -61,7 +59,7 @@ public class SignIn extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        signin.processRequest(request, response);
+        
         
         /*response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
