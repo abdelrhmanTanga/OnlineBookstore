@@ -5,20 +5,10 @@
  */
 package Facade;
 
-import websitemodel.databaseDTO.Client;
-
 /**
  *
  * @author abdelrhman galal
  */
-public class Session {
-    Client clientsDAO;
-    public Session() {
-        clientsDAO = new Client();
-    }
-
-    public boolean check() {
-        return true;
-    }
-
+public class ProductHandler {
+    
 }
