@@ -92,11 +92,8 @@ public class ProductAddition extends HttpServlet {
                 }
             } else {
                 //response.setContentLength((int) item.getSize() + 1000);
-                item.write(new File(context.getRealPath("/pages/images/").replaceAll("\build", "") + item.getName()));
-                url = context.getRealPath("/pages/images/") + item.getName();
-                System.out.println(context.getRealPath("/pages/images/").replaceAll("/build", "") + item.getName());
-                System.out.println(context.getRealPath("/pages/images/").replaceAll("\\build", "") + item.getName());
-                System.out.println(context.getRealPath("/pages/images/").replaceAll("\build", "") + item.getName());
+                item.write(new File(context.getRealPath("/pages/images/").replaceAll("\\\\build", "") + item.getName()));
+                url = context.getRealPath("/pages/images/").replaceAll("\\\\build","") + item.getName();
                 product.setImage(url);
             }
         }
