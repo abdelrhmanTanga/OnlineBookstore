@@ -12,6 +12,20 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
-        <a href="SignIn">Click me</a>
+        <a onclick="loadDoc()">Click me</a>
+        <div id="demo"></div>
+        <script>
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML =
+                                this.responseText;
+                    }
+                };
+                xhttp.open("GET", "/OnlineBookstore/SignIn", true);
+                xhttp.send();
+            }
+        </script>
     </body>
 </html>

@@ -3,21 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package websitemodel.databaseDTO;
+package adminmodel;
 
 /**
  *
  * @author abdelrhman galal
  */
-public class Product {
+public class AdminViewProduct {
 
     private String name;
     private int quantity;
-    private String Author;
-    private int ISBN;
+    private String author;
+    private long ISBN;
     private String description;
-    private int category;
-    private String reviews;
+    private String category;
     private int price;
     private String image;
 
@@ -38,18 +37,18 @@ public class Product {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
-    public void setAuthor(String Author) {
-        this.Author = Author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public int getISBN() {
+    public long getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(long ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -61,20 +60,12 @@ public class Product {
         this.description = description;
     }
 
-    public int getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.category = category;
-    }
-
-    public String getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(String reviews) {
-        this.reviews = reviews;
     }
 
     public int getPrice() {
