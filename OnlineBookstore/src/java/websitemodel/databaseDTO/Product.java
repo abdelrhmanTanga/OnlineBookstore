@@ -14,7 +14,7 @@ public class Product {
     private String name;
     private int quantity;
     private String Author;
-    private int ISBN;
+    private long ISBN;
     private String description;
     private int category;
     private String reviews;
@@ -45,11 +45,11 @@ public class Product {
         this.Author = Author;
     }
 
-    public int getISBN() {
+    public long getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(long ISBN) {
         this.ISBN = ISBN;
     }
 
