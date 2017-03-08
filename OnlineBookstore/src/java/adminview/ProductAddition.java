@@ -7,14 +7,23 @@ package adminview;
 
 import Facade.AdminFacadeHandler;
 import adminmodel.AdminViewProduct;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -41,34 +50,64 @@ public class ProductAddition extends HttpServlet {
         adminFacadeHandler = new AdminFacadeHandler();
     }
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
+        //response.setContentType("text/html;charset=UTF-8");
+
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+        ServletFileUpload upload = new ServletFileUpload(factory);
+
+        List<FileItem> items = upload.parseRequest(request);
+        Iterator itr = items.iterator();
+        String value = "defa";
+        String url = "";
+        while (itr.hasNext()) {
+            FileItem item = (FileItem) itr.next();
+            if (item.isFormField()) {
+                String name = item.getFieldName();
+                value = item.getString();
+            } else {
+                //response.setContentLength((int) item.getSize() + 1000);
+                item.write(new File("D:\\ITI courses\\Servlet Project\\BookShoppingWebsite\\web\\pages\\images" + item.getName()));
+                url = "D:\\ITI courses\\Servlet Project\\BookShoppingWebsite\\web\\pages\\images" + item.getName();
+            }
+        }
+
         PrintWriter out = response.getWriter();
         AdminViewProduct product = new AdminViewProduct();
 //////////////////// filling the product model
-        //request.getParameter("")
-        
-        if (adminFacadeHandler.addBook(product)){
-            
-        }
-        else{
-            
+        product.setName(request.getParameter("pname"));
+        product.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+        product.setAuthor(request.getParameter("author"));
+        product.setISBN(Integer.parseInt(request.getParameter("isbn")));
+        product.setDescription(request.getParameter("description"));
+        product.setCategory(request.getParameter("category"));
+        product.setPrice(Integer.parseInt(request.getParameter("price")));
+        product.setImage(url);
+        if (adminFacadeHandler.addBook(product)) {
+            out.println("true");
+
+        } else {
+            out.println("false");
         }
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ProductAddition.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -80,9 +119,13 @@ public class ProductAddition extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ProductAddition.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -91,7 +134,7 @@ public class ProductAddition extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
