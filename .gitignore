@@ -3,12 +3,13 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-*/dist
-*/build
-*/nbproject
-*/build.xml
-*/manifest.mf
-*/nbbuild.xml
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
 
 # Package Files #
 *.jar
