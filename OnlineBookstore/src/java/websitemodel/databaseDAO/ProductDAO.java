@@ -46,4 +46,28 @@ public class ProductDAO {
         return false;
     }
     
+    //mohamed ali start
+    
+    public int getProductsCount()
+    {
+        int number = 0;
+        try
+        {
+            pst = connection.prepareStatement("SELECT count(id) FROM product");
+            rs  = pst.executeQuery();
+            rs.next();
+            String count = rs.getString(1);
+            number = Integer.parseInt(count);
+        }catch(SQLException ex)
+        {
+             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return number;
+    }
+    
+    
+    
+    //mohamed ali end
+    
+    
 }
