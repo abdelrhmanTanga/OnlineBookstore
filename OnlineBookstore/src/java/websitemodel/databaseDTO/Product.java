@@ -11,6 +11,7 @@ package websitemodel.databaseDTO;
  */
 public class Product {
 
+    private int id;
     private String name;
     private int quantity;
     private String Author;
@@ -20,6 +21,32 @@ public class Product {
     private String reviews;
     private int price;
     private String image;
+    
+    public Product()
+    {
+    }
+    
+    public Product(int id,String name,int quantity,String Author,long ISBN,String description,int category,String reviews,int price,String image)
+    {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.Author = Author;
+        this.ISBN = ISBN;
+        this.description = description;
+        this.category = category;
+        this.reviews = reviews;
+        this.price = price;
+        this.image = image;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

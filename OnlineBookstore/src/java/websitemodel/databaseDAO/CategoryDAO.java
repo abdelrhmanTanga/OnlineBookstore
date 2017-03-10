@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import websitemodel.databaseDTO.Category;
@@ -18,7 +20,11 @@ import websitemodel.databaseDTO.Category;
  * @author abdelrhman galal
  */
 public class CategoryDAO {
+
     Connection connection;
+    PreparedStatement pst;
+    ResultSet rs;
+    
     public CategoryDAO(Connection connection) {
         this.connection = connection;
     }
@@ -40,6 +46,24 @@ public class CategoryDAO {
         }
     }
 
-    
-    
+    public List<Category> getAllCategories() 
+    {
+        List<Category> categories = new ArrayList<>();
+        try {
+            pst = connection.prepareStatement("SELECT * FROM category");
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                Category category = new Category();
+                category.setId(rs.getInt(1));
+                category.setName(rs.getString(2));
+                categories.add(category);
+            }
+            pst.close();
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return categories;
+    }
+
 }
