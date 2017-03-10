@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package Facade;
+package websiteview.model;
 
 /**
  *
  * @author abdelrhman galal
  */
-public class CartHandler {
+public class SignUpDTO {
 
 }
