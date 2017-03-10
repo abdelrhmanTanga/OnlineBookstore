@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/ConnectionPool.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/web/pages/AddProduct.html</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDAO/ProductDAO.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/web/pages/index.html</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDTO/Client.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websiteview/services/SignIn.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDTO/Favorites.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/web/pages/Home.jsp</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/Facade/ProductHandler.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDTO/Cart.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/Facade/Session.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDTO/OrderHistory.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/Facade/AdminFacadeHandler.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/websitemodel/databaseDTO/Category.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/adminmodel/AdminViewProduct.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/src/java/adminview/ProductAddition.java</file>
+            <file>file:/C:/Users/omnia/Desktop/Project%20Servlet%20&amp;%20Jsp/project/OnlineBookstore/OnlineBookstore/web/META-INF/context.xml</file>
+        </group>
+    </open-files>
+</project-private>
