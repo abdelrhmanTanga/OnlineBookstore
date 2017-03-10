@@ -13,6 +13,17 @@ public class OrderHistory {
     private int id;
     private String email;
 
+    public OrderHistory()
+    {
+    }
+    
+    public OrderHistory(int id,String email)
+    {
+        this.id = id;
+        this.email = email;
+    }
+    
+    
     public int getId() {
         return id;
     }
