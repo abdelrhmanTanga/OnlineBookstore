@@ -13,31 +13,14 @@ public class Client {
 
     private String email;
     private String name;
-    private long credit;
+    private int credit;
     private String password;
-    private long phone;
+    private int phone;
     private String address;
     private String country;
     private String gender;
     private String birthday;
     private String job;
-
-    public Client()
-    {
-    }
-    
-    public Client(String email, String name, long credit, String password, long phone, String address, String country, String gender, String birthday, String job) {
-        this.email = email;
-        this.name = name;
-        this.credit = credit;
-        this.password = password;
-        this.phone = phone;
-        this.address = address;
-        this.country = country;
-        this.gender = gender;
-        this.birthday = birthday;
-        this.job = job;
-    }
 
     public String getEmail() {
         return email;
@@ -55,11 +38,11 @@ public class Client {
         this.name = name;
     }
 
-    public long getCredit() {
+    public int getCredit() {
         return credit;
     }
 
-    public void setCredit(long credit) {
+    public void setCredit(int credit) {
         this.credit = credit;
     }
 
@@ -71,11 +54,11 @@ public class Client {
         this.password = password;
     }
 
-    public long getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
