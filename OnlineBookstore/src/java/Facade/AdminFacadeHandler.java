@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import websitemodel.ConnectionPool;
+
 import websitemodel.databaseDAO.CategoryDAO;
 import websitemodel.databaseDAO.ProductDAO;
 import websitemodel.databaseDTO.Category;
